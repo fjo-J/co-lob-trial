@@ -9,6 +9,20 @@
         body {
             font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
         }
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 300ms ease-out;
+        }
+        .modal-leave-active {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 200ms ease-in;
+        }
     </style>
 </head>
 <body class="bg-gray-50 p-4 sm:p-8">
@@ -23,80 +37,147 @@
         
         <hr class="my-8">
 
-        <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-10">5つの成長領域への展開</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-10">保有技術・素材から探る成長領域</h2>
 
-        <div class="flex flex-wrap justify-center gap-6 sm:gap-8">
-
-            <!-- スマートモビリティ -->
-            <div class="border-2 border-blue-500 rounded-xl p-6 w-full md:w-[48%] lg:w-[45%] shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white">
-                <h3 class="text-2xl font-bold text-blue-600 text-center border-b-2 border-blue-500 pb-3 mb-4">
-                    🚗 スマートモビリティ & MaaS
-                </h3>
-                <p class="mb-2"><strong class="font-semibold text-gray-700">市場：</strong> 自動運転、EV、次世代コックピット</p>
-                <p class="mb-4"><strong class="font-semibold text-gray-700">活用技術：</strong> 粘着剤、導電性ポリマー、耐候性アクリル</p>
-                <ul class="list-none space-y-2">
-                    <li><span class="mr-2">⚡️</span><strong>センシング:</strong> LiDAR封止材、ミリ波レーダー透過エンブレム</li>
-                    <li><span class="mr-2">⚡️</span><strong>EVバッテリー:</strong> 熱伝導・絶縁シート、バスバー絶縁コート</li>
-                    <li><span class="mr-2">⚡️</span><strong>内装・HMI:</strong> インモールド加飾フィルム、曲面ディスプレイ用光学粘着剤</li>
-                </ul>
-            </div>
-
-            <!-- ヘルスケア -->
-            <div class="border-2 border-red-500 rounded-xl p-6 w-full md:w-[48%] lg:w-[45%] shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white">
-                <h3 class="text-2xl font-bold text-red-600 text-center border-b-2 border-red-500 pb-3 mb-4">
-                    ❤️ アドバンスト・ヘルスケア & Well-being
-                </h3>
-                <p class="mb-2"><strong class="font-semibold text-gray-700">市場：</strong> ウェアラブル医療機器、DDS、診断支援</p>
-                <p class="mb-4"><strong class="font-semibold text-gray-700">活用技術：</strong> 低刺激性粘着剤、機能性微粉体</p>
-                <ul class="list-none space-y-2">
-                    <li><span class="mr-2">✚</span><strong>ウェアラブル:</strong> 皮膚追従性電極ゲル、低刺激センサー固定シート</li>
-                    <li><span class="mr-2">✚</span><strong>DDS:</strong> マイクロニードル用溶解性支持基盤</li>
-                    <li><span class="mr-2">✚</span><strong>診断支援:</strong> 高音響整合性エコーゲル</li>
-                </ul>
-            </div>
-
-            <!-- サステナブル -->
-            <div class="border-2 border-teal-500 rounded-xl p-6 w-full md:w-[48%] lg:w-[45%] shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white">
-                <h3 class="text-2xl font-bold text-teal-600 text-center border-b-2 border-teal-500 pb-3 mb-4">
-                    🌍 サステナブル社会 & サーキュラーエコノミー
-                </h3>
-                <p class="mb-2"><strong class="font-semibold text-gray-700">市場：</strong> 環境配慮型製品、建築・インフラ、代替プラスチック</p>
-                <p class="mb-4"><strong class="font-semibold text-gray-700">活用技術：</strong> 無溶剤ポリマー、環境対応型ビヒクル</p>
-                <ul class="list-none space-y-2">
-                    <li><span class="mr-2">♻️</span><strong>易解体・リサイクル:</strong> 易解体性ホットメルト、プラスチック材料識別用インク</li>
-                    <li><span class="mr-2">♻️</span><strong>バイオマス・アップサイクル:</strong> 木質バイオマス用バインダー、古紙由来新素材用機能付与剤</li>
-                </ul>
-            </div>
-
-            <!-- 半導体 -->
-            <div class="border-2 border-amber-500 rounded-xl p-6 w-full md:w-[48%] lg:w-[45%] shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white">
-                <h3 class="text-2xl font-bold text-amber-600 text-center border-b-2 border-amber-500 pb-3 mb-4">
-                    📡 次世代半導体・情報通信
-                </h3>
-                <p class="mb-2"><strong class="font-semibold text-gray-700">市場：</strong> 半導体後工程、5G/6G基板、光通信</p>
-                <p class="mb-4"><strong class="font-semibold text-gray-700">活用技術：</strong> 電子材料用バインダー、機能性微粉体</p>
-                <ul class="list-none space-y-2">
-                    <li><span class="mr-2">💡</span><strong>パッケージング:</strong> アンダーフィル用低熱膨張フィラー、UV硬化型ダイシングテープ</li>
-                    <li><span class="mr-2">💡</span><strong>高周波対応:</strong> 低誘電正接樹脂、電磁波シールド用ペースト</li>
-                </ul>
-            </div>
-
-            <!-- スマートアグリ -->
-            <div class="border-2 border-lime-500 rounded-xl p-6 w-full md:w-[48%] lg:w-[45%] shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white">
-                <h3 class="text-2xl font-bold text-lime-600 text-center border-b-2 border-lime-500 pb-3 mb-4">
-                    🌱 スマートアグリ & フードテック
-                </h3>
-                <p class="mb-2"><strong class="font-semibold text-gray-700">市場：</strong> 植物工場、機能性パッケージ、代替タンパク質</p>
-                <p class="mb-4"><strong class="font-semibold text-gray-700">活用技術：</strong> 特殊機能材、粘着剤、微粉体</p>
-                <ul class="list-none space-y-2">
-                    <li><span class="mr-2">🌾</span><strong>農業資材:</strong> 生分解性マルチフィルム、農薬徐放マイクロカプセル</li>
-                    <li><span class="mr-2">🌾</span><strong>食品パッケージ:</strong> 鮮度保持機能性フィルム</li>
-                    <li><span class="mr-2">🌾</span><strong>フードテック:</strong> 代替肉用結着・食感改良剤</li>
-                </ul>
-            </div>
-
+        <!-- Cards Container -->
+        <div id="tech-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <!-- Cards will be inserted here by JavaScript -->
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 modal-enter">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-3xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center p-5 border-b">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+                <button id="modal-close" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+            </div>
+            <div id="modal-body" class="p-6 overflow-y-auto">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const techData = {
+            'adhesives': {
+                title: '粘着剤 (SKダイン®)',
+                description: '高度な分子設計によって多彩な機能を実現するアクリル系粘着剤。',
+                color: 'blue',
+                icon: '🔗',
+                applications: [
+                    { area: 'スマートモビリティ', icon: '🚗', details: ['<strong>内装・HMI:</strong> 曲面ディスプレイ用光学粘着剤', '<strong>EVバッテリー:</strong> 熱伝導・絶縁シート'] },
+                    { area: 'ヘルスケア', icon: '❤️', details: ['<strong>ウェアラブル:</strong> 皮膚追従性電極ゲル、低刺激センサー固定シート'] },
+                    { area: '半導体', icon: '📡', details: ['<strong>パッケージング:</strong> UV硬化型ダイシングテープ用粘着剤'] }
+                ]
+            },
+            'particles': {
+                title: '微粉体 (ケミスノー™)',
+                description: '独自の重合技術により開発された均一な粒子径を持つ機能性粒子。',
+                color: 'amber',
+                icon: '✨',
+                applications: [
+                    { area: '半導体', icon: '📡', details: ['<strong>パッケージング:</strong> アンダーフィル用低熱膨張フィラー'] },
+                    { area: 'スマートモビリティ', icon: '🚗', details: ['<strong>ディスプレイ:</strong> 液晶ディスプレイ用光拡散剤（既存用途からの展開）'] }
+                ]
+            },
+            'functionalMaterials': {
+                title: '特殊機能材',
+                description: '独自の重合・樹脂設計技術から創出される多種多様な機能性ポリマー製品群。',
+                color: 'teal',
+                icon: '🧪',
+                applications: [
+                    { area: 'スマートモビリティ', icon: '🚗', details: ['<strong>センシング:</strong> LiDAR封止材、ミリ波レーダー透過エンブレム用塗料', '<strong>EVバッテリー:</strong> バスバー用絶縁コーティング', '<strong>内装・HMI:</strong> インモールド加飾用ハードコートフィルム'] },
+                    { area: 'ヘルスケア', icon: '❤️', details: ['<strong>DDS:</strong> マイクロニードル用溶解性支持基盤', '<strong>診断支援:</strong> 高音響整合性エコーゲル'] },
+                    { area: 'サステナブル', icon: '🌍', details: ['<strong>易解体・リサイクル:</strong> 易解体性ホットメルト、プラスチック材料識別用インク', '<strong>バイオマス・アップサイクル:</strong> 木質バイオマス用バインダー、古紙由来新素材用機能付与剤'] },
+                    { area: '半導体', icon: '📡', details: ['<strong>高周波対応:</strong> 低誘電正接樹脂、電磁波シールド用ペースト'] },
+                    { area: 'スマートアグリ', icon: '🌱', details: ['<strong>農業資材:</strong> 生分解性マルチフィルム用マスターバッチ、農薬徐放マイクロカプセル', '<strong>フードテック:</strong> 代替肉用結着・食感改良剤'] }
+                ]
+            },
+            'tapeFilm': {
+                title: 'テープ・フィルム加工製品',
+                description: '粘着剤技術と塗工技術を組み合わせた高機能テープ・フィルム。',
+                color: 'lime',
+                icon: '📜',
+                applications: [
+                    { area: 'スマートモビリティ', icon: '🚗', details: ['<strong>内装・HMI:</strong> 自己修復機能付き保護フィルム', '<strong>EVバッテリー:</strong> 高い絶縁性と難燃性を付与した部品固定テープ'] },
+                    { area: 'スマートアグリ', icon: '🌱', details: ['<strong>食品パッケージ:</strong> 鮮度保持機能性フィルム'] },
+                     { area: 'サステナブル', icon: '🌍', details: ['<strong>建築:</strong> VOCフリー建材用接着テープ'] }
+                ]
+            }
+        };
+
+        const cardsContainer = document.getElementById('tech-cards-container');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const modalClose = document.getElementById('modal-close');
+
+        // Generate cards on page load
+        Object.keys(techData).forEach(key => {
+            const tech = techData[key];
+            const card = document.createElement('div');
+            card.className = `border-2 border-${tech.color}-500 rounded-xl p-6 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 bg-white cursor-pointer flex flex-col h-full`;
+            card.dataset.techKey = key;
+            card.innerHTML = `
+                <div class="flex-grow">
+                    <h3 class="text-2xl font-bold text-${tech.color}-600 text-center pb-3 mb-4">
+                        ${tech.icon} ${tech.title}
+                    </h3>
+                    <p class="text-gray-600">${tech.description}</p>
+                </div>
+                <div class="text-center mt-4">
+                     <span class="inline-block bg-${tech.color}-100 text-${tech.color}-800 text-sm font-semibold px-3 py-1 rounded-full">詳細を見る</span>
+                </div>
+            `;
+            cardsContainer.appendChild(card);
+        });
+
+        const openModal = (techKey) => {
+            const tech = techData[techKey];
+            modalTitle.textContent = `${tech.icon} ${tech.title}`;
+            
+            let contentHTML = `<p class="text-lg text-gray-700 mb-6">${tech.description}</p>`;
+            tech.applications.forEach(app => {
+                contentHTML += `
+                    <div class="mb-5">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">${app.icon} ${app.area}</h4>
+                        <ul class="list-none space-y-2 pl-4 border-l-4 border-gray-200">
+                            ${app.details.map(detail => `<li><span class="text-gray-500 mr-2">▪</span>${detail}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            });
+            modalBody.innerHTML = contentHTML;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.add('modal-enter-active'), 10);
+        };
+
+        const closeModal = () => {
+             modal.classList.remove('modal-enter-active');
+             modal.classList.add('modal-leave-active');
+             setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('modal-leave-active');
+             }, 200);
+        };
+
+        cardsContainer.addEventListener('click', (e) => {
+            const card = e.target.closest('[data-tech-key]');
+            if (card) {
+                openModal(card.dataset.techKey);
+            }
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+    </script>
 </body>
 </html>
 
